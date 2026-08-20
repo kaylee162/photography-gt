@@ -10,6 +10,14 @@ export const navigationItems: NavigationItem[] = [
     href: "/events",
   },
   {
+    label: "Darkroom",
+    href: "/darkroom",
+  },
+  {
+    label: "Merch",
+    href: "/merch",
+  },
+  {
     label: "About",
     href: "/about",
   },

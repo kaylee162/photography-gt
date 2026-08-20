@@ -1,8 +1,9 @@
 import Link from "next/link";
-import { Mail } from "lucide-react";
+import { ArrowUpRight, Mail } from "lucide-react";
 
 import { Container } from "@/components/ui/container";
 import { navigationItems } from "@/data/navigation";
+import { CONTACT_EMAIL, ENGAGE_URL, INSTAGRAM_URL } from "@/lib/constants";
 
 function InstagramIcon({
   className = "",
@@ -31,8 +32,8 @@ export function Footer() {
   return (
     <footer className="border-t border-black/10 bg-neutral-950 py-14 text-white">
       <Container>
-        <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
-          <div className="lg:col-span-2">
+        <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-5">
+          <div className="sm:col-span-2">
             <Link
               href="/"
               className="text-xl font-semibold tracking-[-0.03em]"
@@ -71,7 +72,7 @@ export function Footer() {
 
             <div className="mt-5 flex flex-col gap-3">
               <a
-                href="#"
+                href={INSTAGRAM_URL}
                 className="flex w-fit items-center gap-2 text-sm text-white/70 transition hover:text-white"
                 aria-label="Visit the Photography Club Instagram"
               >
@@ -80,12 +81,37 @@ export function Footer() {
               </a>
 
               <a
-                href="mailto:photography@example.com"
+                href={`mailto:${CONTACT_EMAIL}`}
                 className="flex w-fit items-center gap-2 text-sm text-white/70 transition hover:text-white"
               >
                 <Mail size={16} aria-hidden="true" />
                 Email
               </a>
+            </div>
+          </div>
+
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/40">
+              Membership
+            </p>
+
+            <div className="mt-5 flex flex-col gap-3">
+              <a
+                href={ENGAGE_URL}
+                target="_blank"
+                rel="noreferrer"
+                className="flex w-fit items-center gap-2 text-sm text-white/70 transition hover:text-white"
+              >
+                Engage &amp; pay dues
+                <ArrowUpRight size={14} aria-hidden="true" />
+              </a>
+
+              <Link
+                href="/join"
+                className="flex w-fit items-center gap-2 text-sm text-white/70 transition hover:text-white"
+              >
+                How to join
+              </Link>
             </div>
           </div>
         </div>

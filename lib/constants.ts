@@ -5,8 +5,7 @@
 export const ENGAGE_URL =
   "https://gatech.campuslabs.com/engage/organization/photography-at-gt";
 
-// TODO: replace with the club's real Discord invite link
-export const DISCORD_URL = "#";
+export const DISCORD_URL = "https://discord.gg/Rp8JYnMNnd";
 
 export const INSTAGRAM_URL = "https://www.instagram.com/gtphotography.atl/";
 

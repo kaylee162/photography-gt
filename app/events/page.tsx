@@ -3,6 +3,7 @@ import { Info } from "lucide-react";
 
 import { Container } from "@/components/ui/container";
 import { EventFilterGrid } from "@/components/events/event-filter-grid";
+import { GoogleCalendar } from "@/components/events/google-calendar";
 import { upcomingEvents } from "@/data/events";
 import { MEETING_LOCATION, MEETING_SCHEDULE } from "@/lib/constants";
 
@@ -44,6 +45,10 @@ export default function EventsPage() {
             {MEETING_SCHEDULE}
           </p>
           <p className="mt-1 text-sm text-neutral-500">{MEETING_LOCATION}</p>
+        </div>
+
+        <div className="mt-10">
+          <GoogleCalendar />
         </div>
 
         <div className="mt-16">

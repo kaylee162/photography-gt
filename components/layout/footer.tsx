@@ -7,7 +7,7 @@ import {
   CONTACT_EMAIL,
   ENGAGE_URL,
   INSTAGRAM_URL,
-  DISCORD_URL,
+  DISCORD_URL, 
 } from "@/lib/constants";
 
 function InstagramIcon({

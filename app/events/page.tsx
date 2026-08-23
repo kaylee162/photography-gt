@@ -5,7 +5,7 @@ import { Container } from "@/components/ui/container";
 import { EventFilterGrid } from "@/components/events/event-filter-grid";
 import { GoogleCalendar } from "@/components/events/google-calendar";
 import { upcomingEvents } from "@/data/events";
-import { MEETING_LOCATION, MEETING_SCHEDULE } from "@/lib/constants";
+import { DISCORD_URL, MEETING_LOCATION, MEETING_SCHEDULE } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "Events",
@@ -33,7 +33,17 @@ export default function EventsPage() {
           <p>
             The schedule below is a sample of what a semester looks like.
             Exact dates, times, and locations are confirmed on a rolling
-            basis — watch Instagram and our Engage page for the final word.
+            basis — watch Instagram and our Engage page for the final word,
+            or join our{" "}
+            <a
+              href={DISCORD_URL}
+              target="_blank"
+              rel="noreferrer"
+              className="font-semibold text-neutral-900 underline underline-offset-4"
+            >
+              Discord
+            </a>{" "}
+            for reminders as soon as they&apos;re posted.
           </p>
         </div>
 

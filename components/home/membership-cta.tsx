@@ -2,7 +2,7 @@ import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 
 import { Container } from "@/components/ui/container";
-import { ENGAGE_URL } from "@/lib/constants";
+import { DISCORD_URL, ENGAGE_URL } from "@/lib/constants";
 
 export function MembershipCta() {
   return (
@@ -19,8 +19,9 @@ export function MembershipCta() {
 
           <p className="mt-7 max-w-xl text-base leading-7 text-white/65">
             Membership is open to every Georgia Tech student, at every skill
-            level. Sign up and pay dues through Engage, then join us for the
-            next photo walk, workshop, or meeting.
+            level. Sign up and pay dues through Engage, then join our Discord
+            to catch event reminders and chat with other members between
+            meetings.
           </p>
 
           <div className="mt-9 flex flex-wrap gap-3">
@@ -32,6 +33,15 @@ export function MembershipCta() {
             >
               Join on Engage
               <ArrowUpRight size={17} />
+            </a>
+
+            <a
+              href={DISCORD_URL}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center rounded-full border border-white/25 bg-white/5 px-6 py-3 text-sm font-semibold text-white backdrop-blur-sm transition hover:bg-white/10"
+            >
+              Join our Discord
             </a>
 
             <Link

@@ -70,6 +70,8 @@ export default function JoinPage() {
 
             <a
               href={DISCORD_URL}
+              target="_blank"
+              rel="noreferrer"
               className="inline-flex items-center rounded-full border border-white/25 bg-white/5 px-6 py-3 text-sm font-semibold text-white backdrop-blur-sm transition hover:bg-white/10"
             >
               Join our Discord

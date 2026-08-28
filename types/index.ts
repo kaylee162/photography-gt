@@ -20,14 +20,12 @@ export type Photo = {
   height: number;
   photographer: Photographer;
   category:
-    | "portrait"
+    | "cityscapes"
     | "street"
-    | "architecture"
     | "nature"
+    | "people"
+    | "portrait"
     | "sports"
-    | "film"
-    | "night"
-    | "event"
     | "other";
   description?: string;
   camera?: string;
@@ -70,15 +68,8 @@ export type ClubEvent = {
 export type Gallery = {
   id: string;
   title: string;
-  slug: string;
   description: string;
-  coverImage: string;
-  coverImageAlt: string;
-  photoCount: number;
-  date: string;
-  category?: string;
-  /** True when no real cover photo exists yet — render a PlaceholderImage instead of `coverImage`. */
-  placeholder?: boolean;
+  category: Photo["category"];
 };
 
 export type TeamMember = {

@@ -5,19 +5,20 @@ import {
   GOOGLE_CALENDAR_SUBSCRIBE_URL,
 } from "@/lib/constants";
 import { TextLink } from "@/components/ui/text-link";
+import { Reveal } from "@/components/ui/reveal";
 
 export function GoogleCalendar() {
   return (
-    <div className="overflow-hidden rounded-3xl border border-black/10 bg-white">
+    <Reveal className="overflow-hidden border-2 border-ink/15 bg-white">
       <div className="flex flex-wrap items-center justify-between gap-4 p-6 sm:p-8">
         <div>
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-neutral-500">
+          <p className="font-display text-sm tracking-[0.12em] text-slate">
             Club calendar
           </p>
-          <h3 className="font-display mt-3 text-3xl tracking-[-0.02em]">
+          <h3 className="font-display mt-3 text-3xl tracking-[0.005em]">
             Everything, in one place.
           </h3>
-          <p className="mt-2 max-w-md text-sm leading-6 text-neutral-600">
+          <p className="mt-2 max-w-md text-sm leading-6 text-slate">
             Photo walks, workshops, and socials as they&apos;re scheduled —
             synced straight from our Google Calendar.
           </p>
@@ -25,15 +26,15 @@ export function GoogleCalendar() {
 
         <TextLink
           href={GOOGLE_CALENDAR_SUBSCRIBE_URL}
-          className="shrink-0 text-neutral-950"
+          className="shrink-0 text-ink"
         >
           <CalendarPlus size={16} className="mr-0.5" />
           Add to your calendar
         </TextLink>
       </div>
 
-      <div className="border-t border-black/10 bg-[#f7f6f2] p-3 sm:p-4">
-        <div className="relative w-full overflow-hidden rounded-2xl bg-white aspect-[4/3] sm:aspect-[16/9]">
+      <div className="border-t-2 border-ink/15 bg-paper p-3 sm:p-4">
+        <div className="relative w-full overflow-hidden border-2 border-ink/10 bg-white aspect-[4/3] sm:aspect-[16/9]">
           <iframe
             src={GOOGLE_CALENDAR_EMBED_URL}
             title="Georgia Tech Photography Club calendar"
@@ -43,6 +44,6 @@ export function GoogleCalendar() {
           />
         </div>
       </div>
-    </div>
+    </Reveal>
   );
 }

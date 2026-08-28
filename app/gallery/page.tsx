@@ -5,8 +5,9 @@ import { Container } from "@/components/ui/container";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { PlaceholderImage } from "@/components/ui/placeholder-image";
 import { GalleryExplorer } from "@/components/gallery/gallery-explorer";
+import { Reveal, RevealGroup, RevealItem } from "@/components/ui/reveal";
 import { galleries } from "@/data/galleries";
-import { featuredPhotos } from "@/data/photos";
+import { getCategoryCoverPhotos, getGalleryPhotos } from "@/lib/gallery-photos";
 
 export const metadata: Metadata = {
   title: "Gallery",
@@ -15,67 +16,76 @@ export const metadata: Metadata = {
 };
 
 export default function GalleryPage() {
+  const photos = getGalleryPhotos();
+  const coverPhotos = getCategoryCoverPhotos();
+
   return (
     <>
-      <section className="bg-[#f7f6f2] pb-20 pt-36">
+      <section className="bg-paper pb-14 pt-28 sm:pt-32">
         <Container>
-          <p className="text-xs font-semibold uppercase tracking-[0.24em] text-neutral-500">
-            Student work
-          </p>
+          <Reveal>
+            <p className="font-display text-sm tracking-[0.14em] text-slate">
+              Student work
+            </p>
 
-          <h1 className="font-display mt-5 max-w-5xl text-6xl leading-[0.92] tracking-[-0.045em] sm:text-8xl">
-            The gallery
-          </h1>
+            <h1 className="font-display mt-5 max-w-5xl text-6xl leading-[0.88] tracking-[0.005em] sm:text-8xl">
+              The gallery
+            </h1>
 
-          <p className="mt-7 max-w-xl text-base leading-7 text-neutral-600">
-            Explore portraits, street photography, landscapes, events, film,
-            architecture, and more from Georgia Tech photographers.
-          </p>
+            <p className="mt-7 max-w-xl text-base leading-7 text-slate">
+              Explore portraits, street photography, cityscapes, nature, sports,
+              and more from Georgia Tech photographers.
+            </p>
+          </Reveal>
         </Container>
       </section>
 
-      <section className="bg-white py-20 sm:py-24">
+      <section className="bg-white py-14 sm:py-16">
         <Container>
           <SectionHeading eyebrow="Collections" title="Browse by category." />
 
-          <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-            {galleries.map((gallery) => (
-              <div key={gallery.id} className="group">
-                <div className="relative aspect-[4/5] w-full overflow-hidden rounded-2xl">
-                  {gallery.placeholder || !gallery.coverImage ? (
-                    <PlaceholderImage
-                      label={gallery.title}
-                      className="size-full"
-                    />
-                  ) : (
-                    <Image
-                      src={gallery.coverImage}
-                      alt={gallery.coverImageAlt}
-                      fill
-                      sizes="(min-width: 1024px) 25vw, 50vw"
-                      className="object-cover transition duration-500 group-hover:scale-105"
-                    />
-                  )}
-                </div>
+          <RevealGroup className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            {galleries.map((gallery) => {
+              const coverPhoto = coverPhotos[gallery.category];
 
-                <p className="mt-3 text-base font-semibold text-neutral-950">
-                  {gallery.title}
-                </p>
-                <p className="text-sm text-neutral-500">
-                  {gallery.description}
-                </p>
-              </div>
-            ))}
-          </div>
+              return (
+                <RevealItem key={gallery.id} className="group">
+                  <div className="relative aspect-[4/5] w-full overflow-hidden border-2 border-ink/10 shadow-[0_0_0_0_var(--color-ink)] transition-shadow duration-300 group-hover:shadow-[6px_6px_0_0_var(--color-ink)]">
+                    {coverPhoto ? (
+                      <Image
+                        src={coverPhoto.src}
+                        alt={coverPhoto.alt}
+                        fill
+                        sizes="(min-width: 1024px) 25vw, 50vw"
+                        className="object-cover transition duration-500 group-hover:scale-105"
+                      />
+                    ) : (
+                      <PlaceholderImage
+                        label={gallery.title}
+                        className="size-full"
+                      />
+                    )}
+                  </div>
+
+                  <p className="mt-3 text-base font-semibold text-ink">
+                    {gallery.title}
+                  </p>
+                  <p className="text-sm text-slate">
+                    {gallery.description}
+                  </p>
+                </RevealItem>
+              );
+            })}
+          </RevealGroup>
         </Container>
       </section>
 
-      <section className="bg-[#f7f6f2] py-20 sm:py-24">
+      <section className="bg-paper py-14 sm:py-16">
         <Container>
           <SectionHeading eyebrow="All photos" title="Every photo, one grid." />
 
           <div className="mt-12">
-            <GalleryExplorer photos={featuredPhotos} />
+            <GalleryExplorer photos={photos} />
           </div>
         </Container>
       </section>

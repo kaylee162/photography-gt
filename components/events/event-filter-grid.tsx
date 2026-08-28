@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import { AnimatePresence, motion } from "motion/react";
 
 import type { ClubEvent } from "@/types";
 import { EventCard } from "@/components/events/event-card";
@@ -32,25 +33,43 @@ export function EventFilterGrid({ events }: { events: ClubEvent[] }) {
             key={filter.value}
             type="button"
             onClick={() => setActive(filter.value)}
-            className={`rounded-full px-4 py-2 text-sm font-medium transition ${
+            className={`font-display relative border-2 px-4 py-2 text-sm tracking-[0.04em] uppercase transition-colors ${
               active === filter.value
-                ? "bg-neutral-950 text-white"
-                : "bg-neutral-100 text-neutral-600 hover:bg-neutral-200"
+                ? "border-ink text-yellow"
+                : "border-ink/15 text-slate hover:border-ink hover:text-ink"
             }`}
           >
+            {active === filter.value ? (
+              <motion.span
+                layoutId="active-event-filter"
+                className="absolute inset-0 -z-10 bg-ink"
+                transition={{ type: "spring", stiffness: 420, damping: 32 }}
+              />
+            ) : null}
             {filter.label}
           </button>
         ))}
       </div>
 
-      <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {visible.map((event) => (
-          <EventCard key={event.id} event={event} />
-        ))}
-      </div>
+      <motion.div layout className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <AnimatePresence mode="popLayout">
+          {visible.map((event) => (
+            <motion.div
+              key={event.id}
+              layout
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.92 }}
+              transition={{ duration: 0.4, ease: "easeOut" }}
+            >
+              <EventCard event={event} />
+            </motion.div>
+          ))}
+        </AnimatePresence>
+      </motion.div>
 
       {visible.length === 0 ? (
-        <p className="mt-10 text-sm text-neutral-500">
+        <p className="mt-10 text-sm text-slate">
           No events in this category yet — check back soon.
         </p>
       ) : null}

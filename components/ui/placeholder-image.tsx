@@ -22,19 +22,19 @@ export function PlaceholderImage({
   return (
     <div
       className={`relative flex items-center justify-center overflow-hidden ${
-        dark ? "bg-white/5" : "bg-neutral-200"
+        dark ? "bg-paper/10" : "bg-slate/15"
       } ${className}`}
     >
       <div
         className="absolute inset-0"
         style={{
           backgroundImage:
-            "repeating-linear-gradient(135deg, rgba(179,163,105,0.16) 0px, rgba(179,163,105,0.16) 2px, transparent 2px, transparent 14px)",
+            "repeating-linear-gradient(135deg, rgba(255,213,40,0.22) 0px, rgba(255,213,40,0.22) 2px, transparent 2px, transparent 14px)",
         }}
       />
       <div
         className={`relative flex flex-col items-center gap-2 px-4 text-center ${
-          dark ? "text-white/35" : "text-neutral-400"
+          dark ? "text-paper/40" : "text-ink/40"
         }`}
       >
         <Icon size={26} strokeWidth={1.5} />

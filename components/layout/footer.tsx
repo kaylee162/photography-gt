@@ -7,7 +7,7 @@ import {
   CONTACT_EMAIL,
   ENGAGE_URL,
   INSTAGRAM_URL,
-  DISCORD_URL, 
+  DISCORD_URL,
 } from "@/lib/constants";
 
 function InstagramIcon({
@@ -52,25 +52,22 @@ function DiscordIcon({
 
 export function Footer() {
   return (
-    <footer className="border-t border-black/10 bg-neutral-950 py-14 text-white">
+    <footer className="border-t-2 border-yellow bg-ink py-14 text-paper">
       <Container>
         <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-5">
           <div className="sm:col-span-2">
-            <Link
-              href="/"
-              className="text-xl font-semibold tracking-[-0.03em]"
-            >
+            <Link href="/" className="font-display text-3xl tracking-[0.01em]">
               Photography Club
             </Link>
 
-            <p className="mt-3 max-w-md text-sm leading-6 text-white/55">
+            <p className="mt-3 max-w-md text-sm leading-6 text-paper/60">
               Georgia Tech students capturing campus, Atlanta, and the world
               from a thousand different perspectives.
             </p>
           </div>
 
           <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/40">
+            <p className="font-display text-sm tracking-[0.12em] text-sky">
               Explore
             </p>
 
@@ -79,7 +76,7 @@ export function Footer() {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className="w-fit text-sm text-white/70 transition hover:text-white"
+                  className="inline-block w-fit text-sm text-paper/70 transition-all duration-200 hover:translate-x-1 hover:text-yellow"
                 >
                   {item.label}
                 </Link>
@@ -88,7 +85,7 @@ export function Footer() {
           </div>
 
           <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/40">
+            <p className="font-display text-sm tracking-[0.12em] text-sky">
               Connect
             </p>
 
@@ -97,7 +94,7 @@ export function Footer() {
                 href={DISCORD_URL}
                 target="_blank"
                 rel="noreferrer"
-                className="flex w-fit items-center gap-2 text-sm text-white/70 transition hover:text-white"
+                className="flex w-fit items-center gap-2 text-sm text-paper/70 transition-all duration-200 hover:translate-x-1 hover:text-yellow"
                 aria-label="Join the Photography Club Discord"
               >
                 <DiscordIcon className="size-4" />
@@ -106,7 +103,7 @@ export function Footer() {
 
               <a
                 href={INSTAGRAM_URL}
-                className="flex w-fit items-center gap-2 text-sm text-white/70 transition hover:text-white"
+                className="flex w-fit items-center gap-2 text-sm text-paper/70 transition-all duration-200 hover:translate-x-1 hover:text-yellow"
                 aria-label="Visit the Photography Club Instagram"
               >
                 <InstagramIcon className="size-4" />
@@ -115,7 +112,7 @@ export function Footer() {
 
               <a
                 href={`mailto:${CONTACT_EMAIL}`}
-                className="flex w-fit items-center gap-2 text-sm text-white/70 transition hover:text-white"
+                className="flex w-fit items-center gap-2 text-sm text-paper/70 transition-all duration-200 hover:translate-x-1 hover:text-yellow"
               >
                 <Mail size={16} aria-hidden="true" />
                 Email
@@ -124,7 +121,7 @@ export function Footer() {
           </div>
 
           <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/40">
+            <p className="font-display text-sm tracking-[0.12em] text-sky">
               Membership
             </p>
 
@@ -133,7 +130,7 @@ export function Footer() {
                 href={ENGAGE_URL}
                 target="_blank"
                 rel="noreferrer"
-                className="flex w-fit items-center gap-2 text-sm text-white/70 transition hover:text-white"
+                className="flex w-fit items-center gap-2 text-sm text-paper/70 transition-all duration-200 hover:translate-x-1 hover:text-yellow"
               >
                 Engage &amp; pay dues
                 <ArrowUpRight size={14} aria-hidden="true" />
@@ -141,7 +138,7 @@ export function Footer() {
 
               <Link
                 href="/join"
-                className="flex w-fit items-center gap-2 text-sm text-white/70 transition hover:text-white"
+                className="flex w-fit items-center gap-2 text-sm text-paper/70 transition-all duration-200 hover:translate-x-1 hover:text-yellow"
               >
                 How to join
               </Link>
@@ -149,7 +146,7 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-14 flex flex-col gap-3 border-t border-white/10 pt-6 text-xs text-white/35 sm:flex-row sm:items-center sm:justify-between">
+        <div className="mt-14 flex flex-col gap-3 border-t border-paper/10 pt-6 text-xs text-paper/35 sm:flex-row sm:items-center sm:justify-between">
           <p>
             © {new Date().getFullYear()} Georgia Tech Photography Club
           </p>

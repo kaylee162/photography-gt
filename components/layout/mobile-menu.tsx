@@ -21,10 +21,10 @@ export function MobileMenu({ open, onClose }: MobileMenuProps) {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.2 }}
-          className="fixed inset-0 z-50 bg-black text-white md:hidden"
+          className="fixed inset-0 z-50 bg-ink text-paper md:hidden"
         >
           <div className="flex h-20 items-center justify-between px-5 sm:px-8">
-            <span className="text-lg font-semibold tracking-[-0.03em]">
+            <span className="font-display text-2xl tracking-[0.01em]">
               Photography Club
             </span>
 
@@ -32,7 +32,7 @@ export function MobileMenu({ open, onClose }: MobileMenuProps) {
               type="button"
               onClick={onClose}
               aria-label="Close navigation menu"
-              className="flex size-10 items-center justify-center rounded-full border border-white/15 bg-white/5 transition hover:bg-white/10"
+              className="flex size-10 items-center justify-center border-2 border-paper/20 bg-paper/5 transition hover:border-yellow hover:text-yellow"
             >
               <X size={20} />
             </button>
@@ -52,7 +52,7 @@ export function MobileMenu({ open, onClose }: MobileMenuProps) {
                 <Link
                   href={item.href}
                   onClick={onClose}
-                  className="font-display block border-b border-white/10 py-4 text-4xl tracking-[-0.03em] text-white/90 transition hover:text-white"
+                  className="font-display block border-b border-paper/10 py-4 text-5xl tracking-[0.01em] text-paper/90 transition hover:text-yellow"
                 >
                   {item.label}
                 </Link>
@@ -66,7 +66,7 @@ export function MobileMenu({ open, onClose }: MobileMenuProps) {
               target="_blank"
               rel="noreferrer"
               onClick={onClose}
-              className="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold text-black transition hover:bg-white/85"
+              className="inline-flex items-center gap-2 border-2 border-yellow bg-yellow px-6 py-3 text-sm font-semibold uppercase tracking-[0.08em] text-ink transition hover:bg-ink hover:text-yellow"
             >
               Engage &amp; pay dues
               <ArrowUpRight size={17} />

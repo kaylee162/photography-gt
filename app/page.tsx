@@ -6,36 +6,41 @@ import { QuickLinks } from "@/components/home/quick-links";
 import { MembershipCta } from "@/components/home/membership-cta";
 import { Container } from "@/components/ui/container";
 import { TextLink } from "@/components/ui/text-link";
+import { Reveal } from "@/components/ui/reveal";
+import { getFeaturedGalleryPhotos, getPhotoOfTheWeek } from "@/lib/gallery-photos";
 
 export default function HomePage() {
+  const featuredPhotos = getFeaturedGalleryPhotos(5);
+  const photoOfTheWeek = getPhotoOfTheWeek();
+
   return (
     <>
       <Hero />
 
-      <section id="featured-work" className="bg-[#f7f6f2] py-24 sm:py-32">
+      <section id="featured-work" className="bg-paper pt-16 sm:pt-20">
         <Container>
           <div className="grid gap-8 lg:grid-cols-[0.7fr_1.3fr] lg:items-end">
-            <p className="text-xs font-semibold uppercase tracking-[0.24em] text-neutral-500">
+            <p className="font-display text-sm tracking-[0.14em] text-slate">
               Featured work
             </p>
 
-            <h2 className="font-display max-w-4xl text-5xl leading-[0.95] tracking-[-0.04em] sm:text-7xl">
+            <h2 className="font-display max-w-4xl text-5xl leading-[0.9] tracking-[0.005em] sm:text-7xl">
               Photography created by students who see the world differently.
             </h2>
           </div>
 
-          <FeaturedGallery />
+          <FeaturedGallery photos={featuredPhotos} />
 
-          <div className="mt-10">
-            <TextLink href="/gallery" className="text-neutral-900">
+          <Reveal className="mt-10" delay={0.1}>
+            <TextLink href="/gallery" className="text-ink">
               Browse the full gallery
             </TextLink>
-          </div>
+          </Reveal>
         </Container>
       </section>
 
       <UpcomingEvents />
-      <PhotoOfTheWeek />
+      <PhotoOfTheWeek photo={photoOfTheWeek} />
       <QuickLinks />
       <MembershipCta />
     </>

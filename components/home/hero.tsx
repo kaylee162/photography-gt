@@ -63,7 +63,7 @@ export function Hero() {
                 transition={{ delay: 0.2, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
                 className="block"
               >
-                A thousand
+                Yellow Jackets
               </motion.span>
               <motion.span
                 initial={{ opacity: 0, y: 44 }}
@@ -71,22 +71,30 @@ export function Hero() {
                 transition={{ delay: 0.32, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
                 className="block"
               >
-                perspectives.
+                behind the lens,
               </motion.span>
               <motion.span
                 initial={{ opacity: 0, y: 44 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.46, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+                transition={{ delay: 0.44, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
                 className="block text-yellow"
               >
-                One community.
+                capturing a thousand
+              </motion.span>
+              <motion.span
+                initial={{ opacity: 0, y: 44 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.56, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+                className="block text-yellow"
+              >
+                perspectives.
               </motion.span>
             </h1>
 
             <motion.p
               initial={{ opacity: 0, y: 18 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.45, duration: 0.65 }}
+              transition={{ delay: 0.7, duration: 0.65 }}
               className="mt-7 max-w-xl text-base leading-7 text-paper/80 sm:text-lg"
             >
               Explore student photography, join creative events, and capture
@@ -96,7 +104,7 @@ export function Hero() {
             <motion.div
               initial={{ opacity: 0, y: 18 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.6, duration: 0.65 }}
+              transition={{ delay: 0.85, duration: 0.65 }}
               className="mt-9 flex flex-wrap gap-3"
             >
               <Link

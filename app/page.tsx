@@ -19,12 +19,12 @@ export default function HomePage() {
 
       <section id="featured-work" className="bg-paper pt-16 sm:pt-20">
         <Container>
-          <div className="grid gap-8 lg:grid-cols-[0.7fr_1.3fr] lg:items-end">
+          <div>
             <p className="font-display text-sm tracking-[0.14em] text-slate">
               Featured work
             </p>
 
-            <h2 className="font-display max-w-4xl text-5xl leading-[0.9] tracking-[0.005em] sm:text-7xl">
+            <h2 className="font-display mt-3 max-w-4xl text-5xl leading-[0.9] tracking-[0.005em] sm:text-7xl">
               Photography created by students who see the world differently.
             </h2>
           </div>

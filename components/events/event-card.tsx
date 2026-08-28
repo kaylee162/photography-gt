@@ -3,6 +3,7 @@ import { Calendar, MapPin } from "lucide-react";
 
 import type { ClubEvent } from "@/types";
 import { EventTypeBadge } from "@/components/ui/event-type-badge";
+import { MapLink } from "@/components/ui/map-link";
 import { PlaceholderImage } from "@/components/ui/placeholder-image";
 import { formatEventDate, formatEventTime } from "@/lib/utils";
 
@@ -47,10 +48,13 @@ export function EventCard({ event }: { event: ClubEvent }) {
             {formatEventDate(event.startDate)} &middot;{" "}
             {formatEventTime(event.startDate)}
           </span>
-          <span className="flex items-center gap-2">
+          <MapLink
+            address={event.location}
+            className="flex w-fit items-center gap-2 hover:text-ink hover:underline underline-offset-4"
+          >
             <MapPin size={15} className="shrink-0 text-slate" />
             {event.location}
-          </span>
+          </MapLink>
         </div>
       </div>
     </div>

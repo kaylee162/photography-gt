@@ -16,25 +16,25 @@ const offerings = [
   {
     title: "Photo walks",
     description:
-      "Twice-a-month walks around campus and Atlanta to shoot together and explore new spots.",
+      "Weekly meetings alternate between Photo Walks — group walks to scenic spots around Atlanta for photography — and Print Socials, where members share and discuss their work.",
     icon: Camera,
   },
   {
     title: "Workshops",
     description:
-      "Monthly workshops for every level — beginner basics, film, black & white, composition, and editing.",
+      "Hands-on workshops covering photo editing, lighting, fashion photography, and darkroom processes for every experience level.",
     icon: Aperture,
   },
   {
     title: "Exhibitions",
     description:
-      "An end-of-semester exhibition where members print and show their favorite work.",
+      "Each semester concludes in a curated exhibition showcasing member work.",
     icon: ImageIcon,
   },
   {
-    title: "Darkroom",
+    title: "Film lab",
     description:
-      "A member darkroom for developing and printing black & white film, opening soon.",
+      "An on-campus film lab open to the entire GT student body, made possible through collaboration and support from the AMS MakerSpace.",
     icon: Users,
   },
 ];
@@ -54,11 +54,18 @@ export default function AboutPage() {
             </h1>
 
             <p className="mt-8 max-w-2xl text-lg leading-8 text-slate">
-              The Georgia Tech Photography Club is a student-run community for
-              anyone who wants to do photography (or videography) — from first-time
-              shooters with a phone camera to experienced photographers
-              looking for a darkroom. We host photo walks, workshops,
-              exhibitions, and print socials throughout the semester.
+              Photography @ GT is a student-organized photography club at
+              Georgia Tech, founded in 2024. Since then we have grown to 150+
+              members who share a passion for photography across digital and
+              analog practices.
+            </p>
+
+            <p className="mt-5 max-w-2xl text-lg leading-8 text-slate">
+              Our mission is to create an inclusive, collaborative
+              environment that supports camera creatives of all experience
+              levels. We aim to provide a platform where members can learn,
+              create, share, and connect with others and their artistic
+              visions through photography.
             </p>
           </Reveal>
         </Container>
@@ -130,7 +137,7 @@ export default function AboutPage() {
           <SectionHeading
             eyebrow="Leadership"
             title="The team behind the club."
-            description="Officer bios are on the way — check back soon to meet the board."
+            description="Meet the officers who plan our events, manage the club, and keep the community running."
           />
 
           <RevealGroup className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">

@@ -11,7 +11,7 @@ export function TextLink({ href, children, className = "" }: TextLinkProps) {
   return (
     <Link
       href={href}
-      className={`group inline-flex items-center gap-1.5 text-sm font-semibold ${className}`}
+      className={`group inline-flex items-center gap-1.5 text-sm font-semibold transition-colors hover:text-yellow ${className}`}
     >
       {children}
       <ArrowUpRight

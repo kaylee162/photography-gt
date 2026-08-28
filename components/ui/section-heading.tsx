@@ -1,3 +1,5 @@
+import { Reveal } from "@/components/ui/reveal";
+
 type SectionHeadingProps = {
   eyebrow: string;
   title: string;
@@ -16,19 +18,19 @@ export function SectionHeading({
   className = "",
 }: SectionHeadingProps) {
   return (
-    <div
+    <Reveal
       className={`${align === "center" ? "mx-auto text-center" : ""} ${className}`}
     >
       <p
-        className={`text-xs font-semibold uppercase tracking-[0.24em] ${
-          dark ? "text-white/45" : "text-neutral-500"
-        }`}
+        className={`font-display text-sm tracking-[0.14em] ${
+          align === "center" ? "text-center" : ""
+        } ${dark ? "text-sky" : "text-slate"}`}
       >
         {eyebrow}
       </p>
 
       <h2
-        className={`font-display mt-5 max-w-3xl text-4xl leading-[0.98] tracking-[-0.04em] sm:text-6xl ${
+        className={`font-display mt-5 max-w-3xl text-4xl leading-[0.94] tracking-[0.005em] sm:text-6xl ${
           align === "center" ? "mx-auto" : ""
         }`}
       >
@@ -39,11 +41,11 @@ export function SectionHeading({
         <p
           className={`mt-6 max-w-xl text-base leading-7 ${
             align === "center" ? "mx-auto" : ""
-          } ${dark ? "text-white/60" : "text-neutral-600"}`}
+          } ${dark ? "text-paper/65" : "text-slate"}`}
         >
           {description}
         </p>
       ) : null}
-    </div>
+    </Reveal>
   );
 }

@@ -4,6 +4,7 @@ import { ArrowUpRight } from "lucide-react";
 
 import { Container } from "@/components/ui/container";
 import { SectionHeading } from "@/components/ui/section-heading";
+import { Reveal, RevealGroup, RevealItem } from "@/components/ui/reveal";
 import { joinFaq } from "@/data/faq";
 import {
   DISCORD_URL,
@@ -42,108 +43,116 @@ const steps = [
 export default function JoinPage() {
   return (
     <>
-      <section className="bg-neutral-950 pb-20 pt-36 text-white">
+      <section className="bg-ink pb-14 pt-28 text-paper sm:pt-32">
         <Container>
-          <p className="text-xs font-semibold uppercase tracking-[0.24em] text-white/45">
-            Everyone is welcome
-          </p>
+          <Reveal>
+            <p className="font-display text-sm tracking-[0.14em] text-sky">
+              Everyone is welcome
+            </p>
 
-          <h1 className="font-display mt-5 max-w-5xl text-6xl leading-[0.92] tracking-[-0.045em] sm:text-8xl">
-            You do not need expensive gear to create something meaningful.
-          </h1>
+            <h1 className="font-display mt-5 max-w-5xl text-6xl leading-[0.88] tracking-[0.005em] sm:text-8xl">
+              You do not need expensive gear to create something meaningful.
+            </h1>
 
-          <p className="mt-8 max-w-xl text-lg leading-8 text-white/60">
-            Join photo walks, workshops, socials, exhibitions, and a community
-            of student photographers at every skill level.
-          </p>
+            <p className="mt-8 max-w-xl text-lg leading-8 text-paper/65">
+              Join photo walks, workshops, socials, exhibitions, and a community
+              of student photographers at every skill level.
+            </p>
 
-          <div className="mt-10 flex flex-wrap gap-3">
-            <a
-              href={ENGAGE_URL}
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold text-black transition hover:bg-white/85"
-            >
-              Join &amp; pay dues on Engage
-              <ArrowUpRight size={17} />
-            </a>
+            <div className="mt-10 flex flex-wrap gap-3">
+              <a
+                href={ENGAGE_URL}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 border-2 border-yellow bg-yellow px-6 py-3 text-sm font-semibold uppercase tracking-[0.06em] text-ink shadow-[4px_4px_0_0_var(--color-sky)] transition-all duration-150 hover:-translate-x-0.5 hover:-translate-y-0.5 hover:bg-ink hover:text-yellow hover:shadow-[6px_6px_0_0_var(--color-sky)] active:translate-x-0 active:translate-y-0 active:shadow-none"
+              >
+                Join &amp; pay dues on Engage
+                <ArrowUpRight size={17} />
+              </a>
 
-            <a
-              href={DISCORD_URL}
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex items-center rounded-full border border-white/25 bg-white/5 px-6 py-3 text-sm font-semibold text-white backdrop-blur-sm transition hover:bg-white/10"
-            >
-              Join our Discord
-            </a>
-          </div>
+              <a
+                href={DISCORD_URL}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center border-2 border-paper/25 px-6 py-3 text-sm font-semibold uppercase tracking-[0.06em] text-paper shadow-[4px_4px_0_0_var(--color-yellow)] backdrop-blur-sm transition-all duration-150 hover:-translate-x-0.5 hover:-translate-y-0.5 hover:border-sky hover:text-sky hover:shadow-[6px_6px_0_0_var(--color-yellow)] active:translate-x-0 active:translate-y-0 active:shadow-none"
+              >
+                Join our Discord
+              </a>
+            </div>
 
-          <p className="mt-4 text-xs text-white/40">
-            Engage link: {ENGAGE_URL}
-          </p>
+            <p className="mt-4 text-xs text-paper/40">
+              Engage link: {ENGAGE_URL}
+            </p>
+          </Reveal>
         </Container>
       </section>
 
-      <section className="bg-white py-24 sm:py-32">
+      <section className="bg-white py-16 sm:py-20">
         <Container>
           <SectionHeading eyebrow="How to join" title="Four steps to get involved." />
 
-          <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <RevealGroup className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {steps.map((step, index) => (
-              <div key={step.title} className="rounded-3xl border border-black/10 p-7">
-                <span className="font-display text-4xl text-neutral-300">
-                  {String(index + 1).padStart(2, "0")}
-                </span>
-                <h3 className="font-display mt-4 text-2xl tracking-[-0.02em]">
-                  {step.title}
-                </h3>
-                <p className="mt-3 text-sm leading-6 text-neutral-600">
-                  {step.description}
-                </p>
-              </div>
+              <RevealItem key={step.title}>
+                <div className="group border-2 border-ink/15 p-7 shadow-[0_0_0_0_var(--color-ink)] transition-all duration-200 hover:-translate-x-1 hover:-translate-y-1 hover:border-ink hover:shadow-[6px_6px_0_0_var(--color-ink)]">
+                  <span className="font-display text-4xl text-yellow">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+                  <h3 className="font-display mt-4 text-3xl tracking-[0.005em]">
+                    {step.title}
+                  </h3>
+                  <p className="mt-3 text-sm leading-6 text-slate">
+                    {step.description}
+                  </p>
+                </div>
+              </RevealItem>
             ))}
-          </div>
+          </RevealGroup>
 
-          <div className="mt-10 rounded-2xl bg-[#f7f6f2] p-6 ring-1 ring-black/5">
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-neutral-500">
+          <Reveal delay={0.1} className="mt-10 border-2 border-ink/15 bg-paper p-6">
+            <p className="font-display text-sm tracking-[0.12em] text-slate">
               Regular meetings
             </p>
-            <p className="mt-2 text-base font-medium text-neutral-950">
+            <p className="mt-2 text-base font-medium text-ink">
               {MEETING_SCHEDULE}
             </p>
-            <p className="mt-1 text-sm text-neutral-500">{MEETING_LOCATION}</p>
-          </div>
+            <p className="mt-1 text-sm text-slate">{MEETING_LOCATION}</p>
+          </Reveal>
         </Container>
       </section>
 
-      <section className="bg-[#f7f6f2] py-24 sm:py-32">
+      <section className="bg-paper py-16 sm:py-20">
         <Container>
           <SectionHeading eyebrow="Questions" title="Frequently asked questions." />
 
-          <div className="mt-12 grid gap-px overflow-hidden rounded-3xl bg-black/10 sm:grid-cols-2">
+          <RevealGroup className="mt-12 grid gap-px overflow-hidden bg-ink/15 sm:grid-cols-2">
             {joinFaq.map((item) => (
-              <div key={item.question} className="bg-[#f7f6f2] p-7">
-                <h3 className="text-base font-semibold text-neutral-950">
-                  {item.question}
-                </h3>
-                <p className="mt-2 text-sm leading-6 text-neutral-600">
-                  {item.answer}
-                </p>
-              </div>
+              <RevealItem key={item.question} y={14}>
+                <div className="h-full bg-paper p-7">
+                  <h3 className="text-base font-semibold text-ink">
+                    {item.question}
+                  </h3>
+                  <p className="mt-2 text-sm leading-6 text-slate">
+                    {item.answer}
+                  </p>
+                </div>
+              </RevealItem>
             ))}
-          </div>
+          </RevealGroup>
 
-          <p className="mt-10 text-sm text-neutral-500">
-            Curious about the darkroom or merch?{" "}
-            <Link href="/darkroom" className="font-semibold text-neutral-900 underline underline-offset-4">
-              Visit the darkroom page
-            </Link>{" "}
-            or{" "}
-            <Link href="/merch" className="font-semibold text-neutral-900 underline underline-offset-4">
-              see what merch is coming
-            </Link>
-            .
-          </p>
+          <Reveal delay={0.1} className="mt-10 text-sm text-slate">
+            <p>
+              Curious about the darkroom or merch?{" "}
+              <Link href="/darkroom" className="font-semibold text-ink underline decoration-yellow decoration-2 underline-offset-4">
+                Visit the darkroom page
+              </Link>{" "}
+              or{" "}
+              <Link href="/merch" className="font-semibold text-ink underline decoration-yellow decoration-2 underline-offset-4">
+                see what merch is coming
+              </Link>
+              .
+            </p>
+          </Reveal>
         </Container>
       </section>
     </>

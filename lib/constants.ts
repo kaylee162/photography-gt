@@ -1,6 +1,5 @@
 /**
  * Central place for external links and contact info that aren't finalized yet.
- * Replace the TODO values as real accounts/handles go live.
  */
 export const ENGAGE_URL =
   "https://gatech.campuslabs.com/engage/organization/photography-at-gt";
@@ -9,7 +8,6 @@ export const DISCORD_URL = "https://discord.gg/Rp8JYnMNnd";
 
 export const INSTAGRAM_URL = "https://www.instagram.com/gtphotography.atl/";
 
-// TODO: replace with a real club inbox
 export const CONTACT_EMAIL = "gtphotographyatl@gmail.com";
 
 // TODO: replace with confirmed weekly/biweekly meeting details

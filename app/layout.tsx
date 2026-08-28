@@ -1,17 +1,23 @@
 import type { Metadata } from "next";
-import { Geist, Instrument_Serif } from "next/font/google";
+import { Bebas_Neue, Fraunces } from "next/font/google";
 
 import { Footer } from "@/components/layout/footer";
 import { Header } from "@/components/layout/header";
 
 import "./globals.css";
 
-const geist = Geist({
-  variable: "--font-sans",
+// Stand-in for Campaign Serif (Adobe Fonts, licensed — not on Google Fonts).
+// If the club gets a license, swap this for a next/font/local() pointing at
+// the Campaign Serif files and keep the `--font-body` variable name so
+// nothing else needs to change.
+const fraunces = Fraunces({
+  variable: "--font-body",
   subsets: ["latin"],
+  weight: ["400", "500", "600"],
+  style: ["normal", "italic"],
 });
 
-const instrumentSerif = Instrument_Serif({
+const bebasNeue = Bebas_Neue({
   variable: "--font-display",
   subsets: ["latin"],
   weight: "400",
@@ -34,7 +40,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geist.variable} ${instrumentSerif.variable} bg-white text-neutral-950 antialiased`}
+        className={`${fraunces.variable} ${bebasNeue.variable} bg-paper text-ink antialiased`}
       >
         <Header />
         <main>{children}</main>

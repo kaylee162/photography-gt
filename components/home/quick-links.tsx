@@ -2,6 +2,7 @@ import Link from "next/link";
 import { ArrowUpRight, Aperture, ShoppingBag, Users } from "lucide-react";
 
 import { Container } from "@/components/ui/container";
+import { RevealGroup, RevealItem } from "@/components/ui/reveal";
 import { ENGAGE_URL } from "@/lib/constants";
 
 const links = [
@@ -36,24 +37,24 @@ const links = [
 
 export function QuickLinks() {
   return (
-    <section className="bg-white py-24 sm:py-32">
+    <section className="bg-paper py-16 sm:py-20">
       <Container>
-        <div className="grid gap-6 sm:grid-cols-3">
+        <RevealGroup className="grid gap-6 sm:grid-cols-3">
           {links.map((link) => {
             const Icon = link.icon;
             const content = (
               <>
-                <Icon size={22} strokeWidth={1.5} className="text-[#8a7c47]" />
+                <Icon size={22} strokeWidth={1.5} className="text-ink transition group-hover:text-yellow" />
 
-                <h3 className="font-display mt-6 text-2xl tracking-[-0.02em]">
+                <h3 className="font-display mt-6 text-3xl tracking-[0.005em]">
                   {link.title}
                 </h3>
 
-                <p className="mt-3 text-sm leading-6 text-neutral-600">
+                <p className="mt-3 text-sm leading-6 text-slate">
                   {link.description}
                 </p>
 
-                <span className="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-neutral-900">
+                <span className="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-ink">
                   {link.cta}
                   <ArrowUpRight size={16} />
                 </span>
@@ -61,25 +62,23 @@ export function QuickLinks() {
             );
 
             const className =
-              "group flex flex-col rounded-3xl border border-black/10 p-8 transition hover:border-black/20 hover:bg-neutral-50";
+              "group flex flex-col border-2 border-ink/15 bg-paper p-8 shadow-[0_0_0_0_var(--color-ink)] transition-all duration-200 hover:-translate-x-1 hover:-translate-y-1 hover:border-ink hover:bg-ink hover:text-paper hover:shadow-[6px_6px_0_0_var(--color-ink)] [&_span]:hover:text-yellow [&_p]:hover:text-paper/70";
 
-            return link.external ? (
-              <a
-                key={link.title}
-                href={link.href}
-                target="_blank"
-                rel="noreferrer"
-                className={className}
-              >
-                {content}
-              </a>
-            ) : (
-              <Link key={link.title} href={link.href} className={className}>
-                {content}
-              </Link>
+            return (
+              <RevealItem key={link.title} y={30}>
+                {link.external ? (
+                  <a href={link.href} target="_blank" rel="noreferrer" className={className}>
+                    {content}
+                  </a>
+                ) : (
+                  <Link href={link.href} className={className}>
+                    {content}
+                  </Link>
+                )}
+              </RevealItem>
             );
           })}
-        </div>
+        </RevealGroup>
       </Container>
     </section>
   );

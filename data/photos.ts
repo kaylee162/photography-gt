@@ -3,9 +3,9 @@ import type { Photo } from "@/types";
 export const featuredPhotos: Photo[] = [
   {
     id: "tech-green-evening",
-    title: "Evening on Tech Green",
-    src: "/images/hero/tech-green-evening.jpg",
-    alt: "Students crossing Tech Green in the evening light",
+    title: "Atlanta Skyline at Sunset",
+    src: "/gallery/cityscapes/DSC05189.jpg",
+    alt: "Atlanta skyline at sunset, viewed from Georgia Tech's campus",
     width: 2400,
     height: 1600,
     category: "street",

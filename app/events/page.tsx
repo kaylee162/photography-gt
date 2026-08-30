@@ -31,6 +31,7 @@ export default function EventsPage() {
           </p>
         </Reveal>
 
+        {/* 
         <Reveal delay={0.1} className="mt-8 flex items-start gap-3 border-2 border-ink/10 bg-paper p-5 text-sm text-slate">
           <Info size={18} className="mt-0.5 shrink-0 text-slate" />
           <p>
@@ -49,6 +50,7 @@ export default function EventsPage() {
             for reminders as soon as they&apos;re posted.
           </p>
         </Reveal>
+        */}
 
         <Reveal delay={0.16} className="mt-6 border-2 border-ink/15 p-6">
           <p className="font-display text-sm tracking-[0.12em] text-slate">

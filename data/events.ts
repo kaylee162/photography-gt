@@ -8,6 +8,20 @@ import type { ClubEvent } from "@/types";
  */
 export const upcomingEvents: ClubEvent[] = [
   {
+    id: "org fair tabling",
+    title: "Org Fair Tabling",
+    slug: "org-fair-tabling",
+    description:
+      "Come see us at the Org Fair to learn about the club, meet our exec members and connect with some fellow photographers.",
+    startDate: "2026-09-02T11:00:00-04:00",
+    endDate: "2026-09-02T13:00:00-04:00",
+    location: "Ech Green",
+    image: "/images/photos/campus-portrait.jpg",
+    imageAlt: "Aerial view of Georgia Tech's Tech Tower on campus",
+    type: "social",
+    featured: true,
+  }, 
+  {
     id: "fall-kickoff",
     title: "Fall Kickoff Meeting",
     slug: "fall-kickoff-meeting",
@@ -21,6 +35,7 @@ export const upcomingEvents: ClubEvent[] = [
     type: "social",
     featured: true,
   },
+  /**
   {
     id: "midtown-photo-walk",
     title: "Midtown Photo Walk",
@@ -158,7 +173,7 @@ export const upcomingEvents: ClubEvent[] = [
     image: "/images/events/end-of-semester-social.jpg",
     imageAlt: "Students reviewing printed photographs together",
     type: "print-social",
-  },
+  }, */
 ];
 
 export const featuredEvents = upcomingEvents.filter((event) => event.featured);

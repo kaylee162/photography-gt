@@ -78,6 +78,8 @@ export default function MerchPage() {
               Want to know when merch drops? Follow us on{" "}
               <a
                 href={INSTAGRAM_URL}
+                target="_blank"
+                rel="noreferrer"
                 className="font-semibold text-ink underline decoration-yellow decoration-2 underline-offset-4"
               >
                 Instagram

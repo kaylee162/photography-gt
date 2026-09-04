@@ -6,7 +6,7 @@ import { SectionHeading } from "@/components/ui/section-heading";
 import { PlaceholderImage } from "@/components/ui/placeholder-image";
 import { Reveal, RevealGroup, RevealItem } from "@/components/ui/reveal";
 import { darkroomFaq } from "@/data/faq";
-import { ENGAGE_URL } from "@/lib/constants";
+import { DUES_URL } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "Darkroom",
@@ -125,12 +125,12 @@ export default function DarkroomPage() {
               Want first access when the darkroom opens? Make sure your dues
               are paid on{" "}
               <a
-                href={ENGAGE_URL}
+                href={DUES_URL}
                 target="_blank"
                 rel="noreferrer"
                 className="font-semibold text-ink underline decoration-yellow decoration-2 underline-offset-4"
               >
-                Engage
+                GT ePay
               </a>{" "}
               and watch for the training workshop announcement.
             </p>

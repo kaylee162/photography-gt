@@ -3,7 +3,7 @@ import { ArrowUpRight } from "lucide-react";
 
 import { Container } from "@/components/ui/container";
 import { Reveal } from "@/components/ui/reveal";
-import { DISCORD_URL, ENGAGE_URL } from "@/lib/constants";
+import { DISCORD_URL, DUES_URL, ENGAGE_URL } from "@/lib/constants";
 
 export function MembershipCta() {
   return (
@@ -31,9 +31,17 @@ export function MembershipCta() {
 
           <p className="mt-7 max-w-xl text-base leading-7 text-paper/70">
             Membership is open to every Georgia Tech student, at every skill
-            level. Sign up and pay dues through Engage, then join our Discord
-            to catch event reminders and chat with other members between
-            meetings.
+            level. Sign up on Engage and{" "}
+            <a
+              href={DUES_URL}
+              target="_blank"
+              rel="noreferrer"
+              className="font-semibold text-paper underline decoration-yellow decoration-2 underline-offset-4"
+            >
+              pay dues on GT ePay
+            </a>
+            , then join our Discord to catch event reminders and chat with
+            other members between meetings.
           </p>
 
           <div className="mt-9 flex flex-wrap gap-3">

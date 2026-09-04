@@ -5,6 +5,7 @@ import { Container } from "@/components/ui/container";
 import { navigationItems } from "@/data/navigation";
 import {
   CONTACT_EMAIL,
+  DUES_URL,
   ENGAGE_URL,
   INSTAGRAM_URL,
   DISCORD_URL,
@@ -103,6 +104,8 @@ export function Footer() {
 
               <a
                 href={INSTAGRAM_URL}
+                target="_blank"
+                rel="noreferrer"
                 className="flex w-fit items-center gap-2 text-sm text-paper/70 transition-all duration-200 hover:translate-x-1 hover:text-yellow"
                 aria-label="Visit the Photography Club Instagram"
               >
@@ -132,7 +135,17 @@ export function Footer() {
                 rel="noreferrer"
                 className="flex w-fit items-center gap-2 text-sm text-paper/70 transition-all duration-200 hover:translate-x-1 hover:text-yellow"
               >
-                Engage &amp; pay dues
+                Engage
+                <ArrowUpRight size={14} aria-hidden="true" />
+              </a>
+
+              <a
+                href={DUES_URL}
+                target="_blank"
+                rel="noreferrer"
+                className="flex w-fit items-center gap-2 text-sm text-paper/70 transition-all duration-200 hover:translate-x-1 hover:text-yellow"
+              >
+                Pay dues
                 <ArrowUpRight size={14} aria-hidden="true" />
               </a>
 

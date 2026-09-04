@@ -6,12 +6,7 @@ import { Container } from "@/components/ui/container";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { Reveal, RevealGroup, RevealItem } from "@/components/ui/reveal";
 import { joinFaq } from "@/data/faq";
-import {
-  DISCORD_URL,
-  ENGAGE_URL,
-  MEETING_LOCATION,
-  MEETING_SCHEDULE,
-} from "@/lib/constants";
+import { DISCORD_URL, DUES_URL, ENGAGE_URL } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "Join",
@@ -21,12 +16,12 @@ const steps = [
   {
     title: "Sign up on Engage",
     description:
-      "Create an account and join Photography at GT on Georgia Tech's Engage platform. This is also where you'll pay dues.",
+      "Create an account and join Photography at GT on Georgia Tech's Engage platform.",
   },
   {
     title: "Pay dues",
     description:
-      "Dues are paid through Engage and go toward workshops, darkroom supplies, and the exhibition. Amount posted on our Engage page.",
+      "Dues are paid separately through our GT ePay store and go toward workshops, darkroom supplies, and the exhibition.",
   },
   {
     title: "Come to a meeting",
@@ -66,7 +61,17 @@ export default function JoinPage() {
                 rel="noreferrer"
                 className="inline-flex items-center gap-2 border-2 border-yellow bg-yellow px-6 py-3 text-sm font-semibold uppercase tracking-[0.06em] text-ink shadow-[4px_4px_0_0_var(--color-sky)] transition-all duration-150 hover:-translate-x-0.5 hover:-translate-y-0.5 hover:bg-ink hover:text-yellow hover:shadow-[6px_6px_0_0_var(--color-sky)] active:translate-x-0 active:translate-y-0 active:shadow-none"
               >
-                Join &amp; pay dues on Engage
+                Join on Engage
+                <ArrowUpRight size={17} />
+              </a>
+
+              <a
+                href={DUES_URL}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 border-2 border-paper/25 px-6 py-3 text-sm font-semibold uppercase tracking-[0.06em] text-paper shadow-[4px_4px_0_0_var(--color-yellow)] backdrop-blur-sm transition-all duration-150 hover:-translate-x-0.5 hover:-translate-y-0.5 hover:border-sky hover:text-sky hover:shadow-[6px_6px_0_0_var(--color-yellow)] active:translate-x-0 active:translate-y-0 active:shadow-none"
+              >
+                Pay dues
                 <ArrowUpRight size={17} />
               </a>
 
@@ -81,7 +86,7 @@ export default function JoinPage() {
             </div>
 
             <p className="mt-4 text-xs text-paper/40">
-              Engage link: {ENGAGE_URL}
+              Engage link: {ENGAGE_URL} · Dues link: {DUES_URL}
             </p>
           </Reveal>
         </Container>
@@ -109,15 +114,6 @@ export default function JoinPage() {
             ))}
           </RevealGroup>
 
-          <Reveal delay={0.1} className="mt-10 border-2 border-ink/15 bg-paper p-6">
-            <p className="font-display text-sm tracking-[0.12em] text-slate">
-              Regular meetings
-            </p>
-            <p className="mt-2 text-base font-medium text-ink">
-              {MEETING_SCHEDULE}
-            </p>
-            <p className="mt-1 text-sm text-slate">{MEETING_LOCATION}</p>
-          </Reveal>
         </Container>
       </section>
 

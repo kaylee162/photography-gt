@@ -9,7 +9,7 @@ export const joinFaq: FaqItem[] = [
   {
     question: "How much are dues, and what do they cover?",
     answer:
-      "Dues amounts will be listed on our Engage page. They help fund workshops, darkroom supplies, prints for the exhibition, and club events.",
+      "Dues are paid separately from Engage, through our GT ePay store. Amounts will be listed there. They help fund workshops, darkroom supplies, prints for the exhibition, and club events.",
   },
   {
     question: "Do I need experience to join?",

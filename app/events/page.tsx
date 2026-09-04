@@ -6,7 +6,7 @@ import { EventFilterGrid } from "@/components/events/event-filter-grid";
 import { GoogleCalendar } from "@/components/events/google-calendar";
 import { Reveal } from "@/components/ui/reveal";
 import { upcomingEvents } from "@/data/events";
-import { DISCORD_URL, MEETING_LOCATION, MEETING_SCHEDULE } from "@/lib/constants";
+import { DISCORD_URL } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "Events",
@@ -51,16 +51,6 @@ export default function EventsPage() {
           </p>
         </Reveal>
         */}
-
-        <Reveal delay={0.16} className="mt-6 border-2 border-ink/15 p-6">
-          <p className="font-display text-sm tracking-[0.12em] text-slate">
-            Regular meetings
-          </p>
-          <p className="mt-2 text-base font-medium text-ink">
-            {MEETING_SCHEDULE}
-          </p>
-          <p className="mt-1 text-sm text-slate">{MEETING_LOCATION}</p>
-        </Reveal>
 
         <div className="mt-10">
           <GoogleCalendar />

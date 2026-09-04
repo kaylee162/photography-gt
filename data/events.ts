@@ -6,7 +6,7 @@ import type { ClubEvent } from "@/types";
  * closes out the semester. Swap in confirmed dates/times/locations as they're
  * finalized — the Events page shows a banner noting this schedule is illustrative.
  */
-export const upcomingEvents: ClubEvent[] = [
+const allEvents: ClubEvent[] = [
   {
     id: "org fair tabling",
     title: "Org Fair Tabling",
@@ -34,6 +34,45 @@ export const upcomingEvents: ClubEvent[] = [
     imageAlt: "Students gathering at a Photography Club meeting",
     type: "social",
     featured: true,
+  },
+  {
+    id: "campus-photo-walk-sep-12",
+    title: "Campus Photo Walk",
+    slug: "campus-photo-walk-sep-12",
+    description:
+      "[TENTATIVE] Join us on a walk around the Georgia Tech Campus. We'll explore different scenic parts of campus, including Tech Tower, CULC, Skiles Walkway, Old Campus, Ech Green, and more! Whether you're new to Tech or been here for years, it's also fun to explore the beautiful places around you. We're still working on the exact time — we'll post it once it's sorted out. Don't have a camera? The Georgia Tech Library rents out camera equipment for a few days at a time: https://library.gatech.edu/spaces-technology/gadgets. Bring your walking shoes and camera (or phone), and be ready for a super awesome photo walk!",
+    startDate: "2026-09-12T10:00:00-04:00",
+    endDate: "2026-09-12T13:00:00-04:00",
+    location: "Clough Undergraduate Learning Commons",
+    image: "/images/hero/tech-green-evening.jpg",
+    imageAlt: "Georgia Tech's Clough Undergraduate Learning Commons seen from Tech Green",
+    type: "photo-walk",
+  },
+  {
+    id: "print-social-sep-20",
+    title: "Print Social",
+    slug: "print-social-sep-20",
+    description:
+      "Join us for our first print social in IC room 215! Fill out the submission form if you'd like us to print one of your photos — we'll hand them out at the social (limit one photo per person, so pick your best shot). It's also a great chance to meet fellow Tech students who share an interest in photography, talk shop, and hang out.",
+    startDate: "2026-09-20T13:00:00-04:00",
+    endDate: "2026-09-20T16:00:00-04:00",
+    location: "Instructional Center, Room 215",
+    image: "/images/events/print-social-sep-20.jpg",
+    imageAlt: "An Instax camera held over a pile of printed instant photos",
+    type: "social",
+  },
+  {
+    id: "linkedin-headshot-volunteers",
+    title: "Volunteer: LinkedIn Headshot Photographers",
+    slug: "linkedin-headshot-volunteers",
+    description:
+      "Dr. Ian Krout, a faculty member in the Neuroscience Undergraduate Program, is looking for photographers to volunteer taking professional headshots at his LinkedIn Workshop. Backdrops and props are handled — just show up with your camera. If you'd like to be involved, show up to the event. It will be held in the Highlands Room of the Exhibition Hall.",
+    startDate: "2026-09-10T11:00:00-04:00",
+    endDate: "2026-09-10T12:30:00-04:00",
+    location: "Exhibition Hall",
+    image: "/images/events/linkedin-headshot-volunteers.jpg",
+    imageAlt: "A facilitator leading a workshop for a seated group",
+    type: "social",
   },
   /**
   {
@@ -175,5 +214,15 @@ export const upcomingEvents: ClubEvent[] = [
     type: "print-social",
   }, */
 ];
+
+/**
+ * Only shows events that haven't ended yet, sorted soonest-first, so a
+ * forgotten past event doesn't linger on the page.
+ */
+export const upcomingEvents: ClubEvent[] = allEvents
+  .filter((event) => new Date(event.endDate ?? event.startDate) >= new Date())
+  .sort(
+    (a, b) => new Date(a.startDate).getTime() - new Date(b.startDate).getTime(),
+  );
 
 export const featuredEvents = upcomingEvents.filter((event) => event.featured);

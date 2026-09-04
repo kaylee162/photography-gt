@@ -5,7 +5,7 @@ import { ArrowUpRight, X } from "lucide-react";
 import { AnimatePresence, motion } from "motion/react";
 
 import { navigationItems } from "@/data/navigation";
-import { ENGAGE_URL } from "@/lib/constants";
+import { DUES_URL, ENGAGE_URL } from "@/lib/constants";
 
 type MobileMenuProps = {
   open: boolean;
@@ -60,7 +60,7 @@ export function MobileMenu({ open, onClose }: MobileMenuProps) {
             ))}
           </nav>
 
-          <div className="px-5 pt-10 sm:px-8">
+          <div className="flex flex-wrap gap-3 px-5 pt-10 sm:px-8">
             <a
               href={ENGAGE_URL}
               target="_blank"
@@ -68,7 +68,18 @@ export function MobileMenu({ open, onClose }: MobileMenuProps) {
               onClick={onClose}
               className="inline-flex items-center gap-2 border-2 border-yellow bg-yellow px-6 py-3 text-sm font-semibold uppercase tracking-[0.08em] text-ink transition hover:bg-ink hover:text-yellow"
             >
-              Engage &amp; pay dues
+              Engage
+              <ArrowUpRight size={17} />
+            </a>
+
+            <a
+              href={DUES_URL}
+              target="_blank"
+              rel="noreferrer"
+              onClick={onClose}
+              className="inline-flex items-center gap-2 border-2 border-paper/30 px-6 py-3 text-sm font-semibold uppercase tracking-[0.08em] text-paper transition hover:border-yellow hover:text-yellow"
+            >
+              Pay dues
               <ArrowUpRight size={17} />
             </a>
           </div>

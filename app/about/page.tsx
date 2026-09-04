@@ -6,7 +6,7 @@ import { SectionHeading } from "@/components/ui/section-heading";
 import { PlaceholderImage } from "@/components/ui/placeholder-image";
 import { Reveal, RevealGroup, RevealItem } from "@/components/ui/reveal";
 import { teamMembers } from "@/data/team";
-import { MEETING_LOCATION, MEETING_SCHEDULE } from "@/lib/constants";
+import { DUES_URL } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "About",
@@ -22,7 +22,7 @@ const offerings = [
   {
     title: "Workshops",
     description:
-      "Hands-on workshops covering photo editing, lighting, fashion photography, and darkroom processes for every experience level.",
+      "Hands-on workshops covering photo editing, lighting, and darkroom processes for every experience level.",
     icon: Aperture,
   },
   {
@@ -55,7 +55,7 @@ export default function AboutPage() {
 
             <p className="mt-8 max-w-2xl text-lg leading-8 text-slate">
               Photography @ GT is a student-organized photography club at
-              Georgia Tech, founded in 2024. Since then we have grown to 150+
+              Georgia Tech, founded in 2024. Since then we have grown to almost 250
               members who share a passion for photography across digital and
               analog practices.
             </p>
@@ -101,31 +101,27 @@ export default function AboutPage() {
 
       <section className="bg-paper py-16 sm:py-20">
         <Container>
-          <Reveal className="grid gap-10 border-2 border-ink bg-white p-10 sm:p-14 lg:grid-cols-2">
-            <div>
-              <p className="font-display text-sm tracking-[0.14em] text-slate">
-                Meetings
-              </p>
-              <h3 className="font-display mt-4 text-3xl tracking-[0.005em]">
-                {MEETING_SCHEDULE}
-              </h3>
-              <p className="mt-3 text-sm leading-6 text-slate">
-                {MEETING_LOCATION}. Final meeting details will be posted here
-                and on our Instagram and Engage page once confirmed.
-              </p>
-            </div>
-
+          <Reveal className="grid gap-10 border-2 border-ink bg-white p-10 sm:p-14">
             <div>
               <p className="font-display text-sm tracking-[0.14em] text-slate">
                 Dues
               </p>
               <h3 className="font-display mt-4 text-3xl tracking-[0.005em]">
-                Paid through Engage
+                Paid through GT ePay
               </h3>
               <p className="mt-3 text-sm leading-6 text-slate">
                 Membership dues cover workshop materials, darkroom supplies,
-                and exhibition costs. Amounts and payment are handled through
-                our Georgia Tech Engage page.
+                and exhibition costs. Dues are paid separately from Engage,
+                through our{" "}
+                <a
+                  href={DUES_URL}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="font-semibold text-ink underline decoration-yellow decoration-2 underline-offset-4"
+                >
+                  GT ePay store
+                </a>
+                .
               </p>
             </div>
           </Reveal>

@@ -36,13 +36,13 @@ const allEvents: ClubEvent[] = [
     featured: true,
   },
   {
-    id: "campus-photo-walk-sep-12",
+    id: "campus-photo-walk-sep-13",
     title: "Campus Photo Walk",
-    slug: "campus-photo-walk-sep-12",
+    slug: "campus-photo-walk-sep-13",
     description:
-      "[TENTATIVE] Join us on a walk around the Georgia Tech Campus. We'll explore different scenic parts of campus, including Tech Tower, CULC, Skiles Walkway, Old Campus, Ech Green, and more! Whether you're new to Tech or been here for years, it's also fun to explore the beautiful places around you. We're still working on the exact time — we'll post it once it's sorted out. Don't have a camera? The Georgia Tech Library rents out camera equipment for a few days at a time: https://library.gatech.edu/spaces-technology/gadgets. Bring your walking shoes and camera (or phone), and be ready for a super awesome photo walk!",
-    startDate: "2026-09-12T10:00:00-04:00",
-    endDate: "2026-09-12T13:00:00-04:00",
+      "Join us on a walk around the Georgia Tech Campus. We'll explore different scenic parts of campus, including Tech Tower, CULC, Skiles Walkway, Old Campus, Ech Green, and more! Whether you're new to Tech or been here for years, it's also fun to explore the beautiful places around you. We're still working on the exact time — we'll post it once it's sorted out. Don't have a camera? The Georgia Tech Library rents out camera equipment for a few days at a time: https://library.gatech.edu/spaces-technology/gadgets. Bring your walking shoes and camera (or phone), and be ready for a super awesome photo walk!",
+    startDate: "2026-09-13T13:00:00-04:00",
+    endDate: "2026-09-13T16:00:00-04:00",
     location: "Clough Undergraduate Learning Commons",
     image: "/images/hero/tech-green-evening.jpg",
     imageAlt: "Georgia Tech's Clough Undergraduate Learning Commons seen from Tech Green",
